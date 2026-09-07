@@ -3,29 +3,28 @@ using namespace std;
 
 int main()
 {
-int book[5];
-cout<<"Enter 5 Book IDs: \n";
-for(int i=0; i<5; i++)
-{
-cin>>book[i];
-}
-for(int i=0; i<4; i++)
-{
-for(int j=0; j<4; j++)
-{
-if(book[j]>book[j+1])
-{
-int temp=book[j];
-book[j]=book[j+1];
-book[j+1]=temp;
-}
-}
-}
-cout<<"Book IDs in ascending order: ";
-for(int i=0; i<5; i++)
-{
-cout<<book[i]<<"";
-}
-cout<<endl;
-return 0;
+  int book[5];
+  int searchID;
+
+  cout<<"Enter 5 Book ID:\n";
+
+  for(int i=0; i<5; i++)
+  {
+     cin>>book[i];
+  }
+
+  cout<<"\nEnter Book ID to search: ";
+  cin>>searchID;
+
+  for(int i=0; i<5; i++)
+  {
+     if (book[i]==searchID)
+     {
+       cout<<"Book Found!";
+       return 0;
+     }
+  }
+
+  cout<<"Book Not Found!";
+  return 0;
 }
